@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+
+    <!--
+
+     Objetivos de la actividad:
+        -Cambiar la fuente de  las  imágenes
+        -Cambiar el texto
+        -Asignación de clases en los atributos
+        -Copiar nodos html
+    -->
+
+    <!-- 
+    En este proyecto se puede crear tu propia tira cómica utilizando y Fotos cuadradas tiene - entonces ¿por qué no usar las fotos de tu cuenta de Instagram o de Facebook?  Tendrás
+    ser capaz de añadir imágenes, agregar, copiar en leyendas y globos de la historia.  También aprenderemos cómo hacer más escenas mediante la adición de las más viñetas al comic.
+    -->
+
+  <!--
+    Vamos a empezar.
+
+    1) LEER LOS COMENTARIOS. Esto es un comentario. Todo dentro de la etiqueta de comentarios de HTML o  con los signos' /* */' en lenguaje de estilos  CSS, 
+	no se procesa como código, pero aparecen en el  sobre el código. 
+	Para este proyecto, los comentarios los usaremos para  dar instrucciones, consejos y guías para completar el proyecto, 
+	así que debemos leer todos los comentarios que nos encontremos para obtener una comprensión de las tareas que se nos ha pedido  hacer.
+    2) HABITUARNOS Y  ORIENTARNOS DENTRO EL CÓDIGO.
+     HTML se compone de etiquetas que este aspecto<p> </p>.
+	Las etiquetas te dicen algo sobre la información contenida dentro de las mismas. 
+  -->
+
+
+
+    <title>Un comic en html</title>
+	<meta charset='utf-8'">
+
+  <!-- Este es el estilo para el comic -->
+  <style>
+       /* Esto es un comentario CSS*/
+          /*  CSS sirve para dar estilo */
+               /*  en principio no lo vamos a trabajar aunque podemos echarle un vistazo */
+    body {
+      background-color:#6d826d;
+      font-family:"Comic Sans MS", sans-serif;
+      line-height:1.2;
+      text-align: center;
+      padding: 1em 0 0 20px;
+    }
+    h1 {
+      text-transform: uppercase;
+      text-shadow: 4px 4px 0px rgb(241, 241, 241);
+      font-size:40px;
+      color:rgb(159, 230, 148);
+    }
+    h2 {
+     
+      color:rgb(245, 245, 245);
+    }
+    h3 {
+     
+     color:rgb(245, 245, 245);
+   }
+    .comic {
+      max-width:826px;
+      margin:60px auto 0;
+    }
+    .scene {
+      width: 250px;
+      height:250px;
+      border:3px solid rgb(244, 244, 244);
+      background: #fff;
+      margin:8px;
+      display: inline-block;
+      position: relative;
+    }
+    .scene img {
+      width:100%;
+      height:100%;
+      display: block;
+    }
+    .caption {
+      padding:10px;
+      margin:0;
+      position: absolute;
+      left:0;
+      right:0;
+      background:#71e981;
+      text-align:left;
+      top:0;
+    }
+    .caption.bottom {
+      bottom:0;
+      top:auto;
+      border-top:2px solid black;
+    }
+    .caption.top {
+      top:0;
+       border-bottom:2px solid rgb(188, 251, 199);
+    }
+    .speech {
+      width:40%;
+      border-radius:50%;
+      border:2px solid black;
+      margin:0;
+      position: absolute;
+      z-index:1;
+      background: Snow ;
+      padding:20px;
+      top:-15px;
+      text-align: center;
+    }
+ 
+    /* CSS avanzado para la orientación de los globos con respecto al personaje*/
+    .speech:after {
+      border-color: snow transparent;
+      border-style: solid;
+      border-width: 13px 13px 0;
+      bottom: -11px;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left:-14px;
+      position: absolute;
+      width: 0;
+    }
+    .speech:before {
+      border-color: black transparent;
+      border-style: solid;
+      border-width: 16px 16px 0;
+      bottom: -15px;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left:-17px;
+      position: absolute;
+      width: 0;
+    }
+    .speech.left {
+      left:-15px;
+    }
+    .speech.right {
+      right:-15px;
+    }
+
+    footer {
+      clear:both;
+    }
+    .finish.line {
+      color: rgb(138, 255, 127);
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- 
+    Tarea 1: 
+Primero, ¿por qué no cambiar el encabezado <h1> para dar al cómic un nombre más apropiado.  
+Cualquier texto que va entre las etiquetas <h1> y </h1> se convertirá en el título.</h1>  -->
+  <h1>La vida es bonita</h1>
+  <h2> ¿Quieres saber por qué? </h2>
+
+  <h3> Te lo voy a enseñar... </h3>
+
+  <!-- 
+  Aquí es donde comienza el cómic. 
+    El <div> con class 'comic'envuelve cada div 'escena  o viñeta ' y contiene a todas las escenas.</div>
+  -->
+  <div class="comic">
+
+      <!--
+        Tarea2
+        El  HTML  del div inferior es una escena de a comic.
+        Empiece por cambiar las imágenes de la escena con una de tus propias fotos.  
+        Como la escena es cuadrada una foto cuadrada funcionará mejor. ¿Por qué no obtener la url de la imagen de una de tus fotos de Instagram?   Cambiar el valor del atributo src de la etiqueta img que va entre las comillas dobles
+      -->
+      <div class="scene">
+        <p class="caption bottom">Imaginate lo cómoda que es cuando te tumbas...</p>
+        <p class="speech left">Esta es tu cama</p>
+        <img src="https://www.elmueble.com/medio/2022/06/15/la-cama-verde-lana-de-vispring-para-anadir-estilo_1a3c4b02_600x600.jpg" alt="" />
+      </div>
+
+       <!-- 
+    ¡ Magnífico! Ahora veamos algunos globos y leyendas incorporados en  otras escenas.
+
+Tarea 3:
+        Ver la primera escena anterior.  Tiene un título y un bocadillo de diálogo.
+        Copiando el párrafo del discurso<p>, adicione una burbuja del discurso de la segunda escena más abajo y luego cambiar su texto.
+      -->
+      <div class="scene">
+        <p class="caption bottom">Imagina que caminas por estos hermosos prados</p>
+        <p class="speech right">Fijate en el amanecer</p>
+        <img src="https://images.pexels.com/photos/461960/pexels-photo-461960.jpeg?cs=srgb&dl=pexels-pixabay-461960.jpg&fm=jpg" alt="" />
+      </div>
+
+      <!-- 
+       Dependiendo de la foto usemos, es posible que desee mover los subtítulos a la 'parte superior' o la 'inferior',
+         o el globo de diálogo "izquierda o derecha".
+
+         Tarea 4:
+         Mira la cuarta escena a continuación. Tiene un bocadillo en el lado izquierdo.
+         Cambie el nombre de la clase "left" a "right" para que el bocadillo se mueva hacia el lado derecho.
+         Si desea que una leyenda esté en la parte superior, nos aseguramos  de que tenga la clase 'top', si lo deseamos en la parte inferior, asegúrese de que tenga la clase 'bottom'. Podemos hacer este cambio en la escena o viñetas
+      -->
+      <div class="scene">
+        <p class="caption bottom">¿Sigues teniendo dudas sobre lo bonita que es la vida?</p>
+        <img src="https://st3.depositphotos.com/1030956/15550/v/600/depositphotos_155505436-stock-illustration-attractive-lady-portrait.jpg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="speech left">Disolvamoslas...</p>
+        <p class="caption bottom">Tienes el poder de conseguir lo que te propongas</p>
+        <img src="https://misdinamicas.com/wp-content/uploads/2022/01/frases-motivadoras.jpg" alt="" />
+      </div>
+      
+      <div class="scene">
+        <p class="speech right"> Piensa que escuchas las olas del mar...</p>
+        <img src="https://services.meteored.com/img/article/olas-y-viento-a-la-orilla-del-mar-270471-1_768.jpg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="caption top"> O que das un paseo por este hermoso monte...</p>
+        <img src="https://images.theconversation.com/files/528685/original/file-20230527-23-8zdb3n.png?ixlib=rb-1.1.0&rect=0%2C0%2C3636%2C2030&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="speech right">Rompe tus cadenas</p>
+        <p class="caption bottom"> Piensa que estas a tiempo de cambiar como piensas</p>
+        <img src="https://i0.wp.com/psicoguias.com/wp-content/uploads/2019/03/eliminar-pensamientos-negativos.png?fit=880%2C360&ssl=1" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="caption top">No mires atrás</p>
+        <img src="https://images.ecestaticos.com/hvohP34GLnPLZUW86qH09B88yq4=/21x178:2683x1672/1600x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fe67%2Ff21%2F804%2Fe67f2180467ece2edb1359fda5cce5f0.jpg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="caption bottom">Y sé feliz</p>
+        <img src="https://www.cuerpomente.com/medio/2020/10/16/10-frases-felicidad-fototexto9_7ae58c71_1400x1400.jpg" alt="" />
+      </div>
+      
+       <!-- 
+        ¿ Este es el final del cómic :( ?
+        ¿Queremos crear a un cómic más grande?
+
+        Tarea 5:
+        Copiar el código HTML de tres 'escena' y pegar por debajo de este comentario... ahora tenemos 3 escenas más en nuestro comic ;)
+      -->
+
+  </div>
+
+  
+  
+
+
+
+  <footer>
+    <p class="finish line"> Realizado por: Kyllian Arribas (Nerea) </p>
+      <!-- Créditos  para imágenes -->
+   <p class="finish line"> Todas las imágenes tomadas de <a href="http://flickr.com">flickr.com</a></p>
+  </footer>
+
+</body>
+</html>
